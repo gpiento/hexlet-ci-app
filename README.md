@@ -1,4 +1,5 @@
 ![hexlet-ci-app](https://github.com/gpiento/hexlet-ci-app/actions/workflows/main.yml/badge.svg)
+[![main](https://github.com/gpiento/hexlet-ci-app/actions/workflows/main.yml/badge.svg)](https://github.com/gpiento/hexlet-ci-app/actions/workflows/main.yml)
 
 # Example app for CI Hexlet course
 
