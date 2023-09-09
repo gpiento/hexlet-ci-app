@@ -19,4 +19,37 @@ jobs:
           npm-version: ${{ matrix.npm-version }}
       - name: Install Dependencies
         run: npm install
-  
+  test:
+    name: run test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+        npm-version: [6.x]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js and NPM
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          npm-version: ${{ matrix.npm-version }}
+      - name: Test
+        run: make test
+  lint:
+    name: run lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+        npm-version: [6.x]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js and NPM
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          npm-version: ${{ matrix.npm-version }}
+      - name: Lint
+        run: make lint
